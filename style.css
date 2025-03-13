@@ -1,0 +1,468 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:white;
+}
+
+.hero {
+    background: linear-gradient(rgba(59, 2, 59, 0.6), rgba(49, 49, 49, 0.5)),
+        url(./image/engaging-with-healthcare-workers-realistic-portrait_94628-22180.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Adding a slanted effect */
+}
+
+.hero-content {
+    text-align: center;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.hero-content h1,
+.hero-content p {
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    opacity: 0;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    animation: slide-up 1s ease-out forwards;
+}
+
+.hero-content p {
+    font-size: 28px;
+    margin: 15px 0;
+    animation: fade-in 1.5s ease-out forwards;
+}
+
+.hero-content .button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #8429a5;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.services{
+    background: white;
+    text-align: center;
+    padding: 10px;
+}
+.services h2{
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+.services p{
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+.hero-content .button:hover {
+    background-color: #b333e0;
+    transform: translateY(-3px);
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+    
+}
+.about h1{
+    text-align: center;
+    font-family: sans-serif;
+    color: purple;
+    margin-bottom: 20px;
+}
+.about p{
+   width:80%;
+   font-size: 20px;
+}
+.about p img{
+    float: right;
+    width: 60%;
+    margin: 4px;
+    border-radius: 15px;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: #8429a5;
+    padding: 10px 4px !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.navbar .logo img{
+    width: 10%;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #f3d1ff;
+}
+.grid-container{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  
+}
+.grid-container div{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px 1px grey ;
+}
+h2{
+    color: #8429a5;
+}
+.grid-container div h2{
+    font-size: 28px;
+    color: #8429a5;
+}
+.grid-container div p{
+    font-size: 20px;
+}
+/* Scroll Line Section */
+.scroll-line-section {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Aligned content to left of the vertical line */
+    padding: 0px 20px;
+    background-color: #f9f9f9;
+}
+
+/* Vertical Line */
+.scroll-line {
+    position: sticky; /* Keeps the line in view while scrolling */
+    top: 50px;
+    width: 4px;
+    height: 0;
+    background-color: #8429a5;
+    transition: height 0.6s ease-out;
+}
+
+/* Content Section Next to the Line */
+.scroll-line-content {
+    margin-left: 20px; /* Space between the line and the text */
+    max-width: 800px;
+}
+
+.scroll-line-content h2 {
+    font-size: 36px;
+    color: #8429a5;
+    margin-bottom: 20px;
+}
+
+.scroll-line-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Slight downward animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible Paragraph */
+.scroll-line-content p.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move into position */
+}
+.whyus{
+    border-top: 4px solid #8429a5 ;
+    height: auto;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+    background: gainsboro;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.whyus div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.whyus div a{
+    text-decoration: none;
+    background: #8429a5;
+    color: white;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 4px;
+}
+.whyus div img{
+ width: 100%;
+}
+footer{
+    background-color: white;
+    height:auto;
+    width: 100%;
+}
+footer p a{
+    text-decoration: none;
+}
+.copyright{
+    background: #b333e0;
+    color: #f9f9f9;
+}
+.about-init{
+    background: #b333e0;
+    color:white;
+    width: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px ;
+    margin-top: 80px;
+}
+.mission{
+    width: 100%;
+}
+.mission p{
+    text-align: center;
+}
+.mission h2{
+    text-align: center;
+    color: #8429a5;
+    display: grid;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.value{
+    width: 100% !important;
+}
+.value div{
+    margin: 20px !important;
+}
+.position{
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+}
+.formholder{
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    height: 100vh !important;
+    padding: 20px;
+    margin-top: 50px;
+    background: #8429a5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formholder div{
+    width: 45%;
+    
+}
+.formholder div p span{
+    color: rgba(48, 2, 48, 0.808);
+    font-weight: bold;
+}
+.formholder div:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.formholder div form{
+    background: white;
+    padding: 10px;
+    width: 350px;
+    color:black;
+    border-radius: 5px;
+}
+.formholder div form label{
+    margin-top: 8px;
+}
+.formholder div form div{
+    width: 100%;
+    margin-top:10px ;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2px !important;
+}
+.formholder div form div input{
+    width: 100%;
+    outline: none;
+    border: 2px solid #8429a5;
+    border-radius: 4px;
+    padding: 2px;
+}
+.formholder div form div textarea{
+    width: 100%;
+    outline: none;
+    border: 2px solid #8429a5;
+    border-radius: 4px;
+    padding: 2px;
+}
+.formholder div form div button{
+    background: #8429a5;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+.icon1{
+    display: none;
+}
+.icon2{
+    display: none;
+}
+@media screen and (max-width:768px) {
+    .navbar{
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+    }
+   .navbar .nav-links{
+        display: none;
+    }
+    .icon1{
+        color: white;
+        display: block;
+        font-size: 28px;
+    }
+    .icon2{
+        color: white;
+        display: none;
+        font-size: 28px;
+    }
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .formholder{
+        flex-direction: column;
+        height: 140vh !important;
+    }
+    .formholder div{
+     width: 90%;
+    }
+}
+@media screen and (max-width:900px) {
+    h2, h1 , h3{
+        font-size: 20px !important;
+    }
+    p{
+      font-size: 14px !important;
+    }
+}
+@media screen and (max-width:540px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    .whyus{
+        flex-direction: column;
+    }
+    .whyus div{
+        width: 90%;
+        margin: 10px;
+    }
+}
+.nav-box{
+    background-color:#8429a5;
+    box-shadow: 1px 1px 1px 1px rgba(220, 176, 250, 0.708);
+    position: fixed;
+    z-index: 100;
+    width: 200px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   list-style: none;
+   border-radius: 8px;
+   display: none;
+   right: 20px;
+}
+.nav-box li{
+    margin: 20px;
+}
+.nav-box a{
+    text-decoration: none;
+    color: black;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    .nav-box{
+        top: 80px;
+    }
+}
